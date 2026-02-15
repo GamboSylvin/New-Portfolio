@@ -16,8 +16,14 @@ public class PostService implements IPostService{
         this.postRepository = postRepository;
     }
 
-    public PostDTO getfirstPost(){
-        return PostMapper.convertToDTO(postRepository.findById(1).orElse(new Post("default post","Lorem Ipsum")));
+    public PostDTO getPostById(int id){
+        return PostMapper.convertToDTO(postRepository.findById(id).orElse(new Post("default post","Lorem Ipsum")));
     }
 
+    public List<PostDTO> getAllPosts(){
+        return postRepository.findAll()
+                .stream()
+                .map(PostMapper::convertToDTO)
+                .toList();
+    }
 }
