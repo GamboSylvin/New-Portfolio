@@ -4,6 +4,8 @@ import com.portfolio.blog.api.model.Post;
 import com.portfolio.blog.api.model.PostDTO;
 import com.portfolio.blog.api.model.PostMapper;
 import com.portfolio.blog.api.model.PostRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,10 +22,8 @@ public class PostService implements IPostService{
         return PostMapper.convertToDTO(postRepository.findById(id).orElse(new Post("default post","Lorem Ipsum")));
     }
 
-    public List<PostDTO> getAllPosts(){
-        return postRepository.findAll()
-                .stream()
-                .map(PostMapper::convertToDTO)
-                .toList();
+    public Page<PostDTO> getAllPosts(Pageable pageable){
+        return postRepository.findAll(pageable)
+                .map(PostMapper::convertToDTO);
     }
 }

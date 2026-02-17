@@ -2,6 +2,8 @@ package com.portfolio.blog.api.controller;
 
 import com.portfolio.blog.api.model.PostDTO;
 import com.portfolio.blog.api.service.IPostService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +25,7 @@ public class BlogController {
     }
 
     @GetMapping("api/posts")
-    public List<PostDTO> allPosts(){
-        return postService.getAllPosts();
+    public Page<PostDTO> allPosts(Pageable pageable){
+        return postService.getAllPosts(pageable);
     }
 }
