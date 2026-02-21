@@ -48,4 +48,24 @@ public class Post {
     public int getId(){ return id;}
 
     public LocalDateTime getCreatedAt(){ return createdAt;}
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
