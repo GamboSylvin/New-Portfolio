@@ -15,12 +15,14 @@ public class Project {
     private String category;
     private String[] technologies;
     private String imageUrl;
+    private String link;
 
     public Project(){}
 
-    public Project(String name, String overview){
+    public Project(String name, String overview, String link){
         this.name = name;
         this.overview = overview;
+        this.link = link;
     }
 
     public int getId(){
@@ -35,6 +37,7 @@ public class Project {
     public String getOverview() {
         return overview;
     }
+    public String getLink(){ return link; }
 
     public String[] getTechnologies() {
         return technologies;
@@ -54,6 +57,10 @@ public class Project {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setLink(String link){
+        this.link = link;
     }
 
     public void setOverview(String overview) {

@@ -7,12 +7,14 @@ public class ProjectDTO {
     private String category;
     private String[] technologies;
     private String imageUrl;
+    private String link;
 
     public ProjectDTO(){}
 
-    public ProjectDTO(String name, String overview){
+    public ProjectDTO(String name, String overview, String link){
         this.name = name;
         this.overview = overview;
+        this.link = link;
     }
 
     public void setTechnologies(String[] technologies) {
@@ -39,6 +41,8 @@ public class ProjectDTO {
         this.id = id;
     }
 
+    public void setLink(String link){this.link = link;}
+
     public String getImageUrl() {
         return imageUrl;
     }
@@ -62,4 +66,6 @@ public class ProjectDTO {
     public int getId() {
         return id;
     }
+
+    public String getLink(){ return link; }
 }
