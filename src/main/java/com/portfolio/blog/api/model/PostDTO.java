@@ -1,11 +1,10 @@
 package com.portfolio.blog.api.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import org.springframework.validation.annotation.Validated;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class PostDTO {
     @NotNull
@@ -16,7 +15,10 @@ public class PostDTO {
     private String content;
     private int id;
     private String author;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime createdAt;
+    private String imageUrl;
+
     public String getTitle(){
         return title;
     }
@@ -26,6 +28,10 @@ public class PostDTO {
     public int getId(){ return id; }
     public String getAuthor(){ return author; }
     public LocalDateTime getCreatedAt(){ return createdAt; }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
     public void setTitle(String title){
         this.title = title;
@@ -43,4 +49,7 @@ public class PostDTO {
         this.createdAt = createdAt;
     }
 
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }
