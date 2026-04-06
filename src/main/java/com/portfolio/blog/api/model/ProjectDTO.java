@@ -1,10 +1,17 @@
 package com.portfolio.blog.api.model;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
 public class ProjectDTO {
     private int id;
+    @NotNull
     private String name;
+    @NotNull
     private String overview;
+    @NotNull
     private String category;
+    @NotEmpty
     private String[] technologies;
     private String imageUrl;
     private String link;

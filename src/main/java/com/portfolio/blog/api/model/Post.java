@@ -19,6 +19,7 @@ public class Post {
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+    private String imageUrl;
 
     public Post(){}
 
@@ -49,6 +50,10 @@ public class Post {
 
     public LocalDateTime getCreatedAt(){ return createdAt;}
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -67,5 +72,9 @@ public class Post {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

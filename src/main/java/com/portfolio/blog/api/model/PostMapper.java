@@ -10,6 +10,8 @@ public class PostMapper {
         DTO.setId(post.getId());
         DTO.setAuthor(post.getAuthor());
         DTO.setCreatedAt(post.getCreatedAt());
+        DTO.setImageUrl(post.getImageUrl());
+
 
         return DTO;
     }
@@ -19,6 +21,7 @@ public class PostMapper {
             throw new NullPointerException("Invalid value for a postDTO");
         Post post = new Post(dto.getTitle(), dto.getContent());
         post.setAuthor(dto.getAuthor());
+        post.setImageUrl(dto.getImageUrl());
 
         return post;
     }
